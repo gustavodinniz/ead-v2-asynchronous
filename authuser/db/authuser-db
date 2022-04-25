@@ -1,0 +1,1 @@
+sudo docker run --name ead-authuser-db -p 5441:5432 -e POSTGRES_DB=ead-authuser-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=123456 postgres:13.1
