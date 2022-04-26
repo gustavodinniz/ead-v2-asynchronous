@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-authuser-service
   datasource:
-    url: jdbc:postgresql://localhost:5441/ead-authuser-db
+    url: jdbc:postgresql://localhost:5444/ead-v2-authuser-db
     username: admin
     password: 123456
   jpa:
