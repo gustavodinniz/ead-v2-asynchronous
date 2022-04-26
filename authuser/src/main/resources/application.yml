@@ -23,6 +23,8 @@ spring:
   output:
     ansi:
       enabled: Always
+  rabbitmq:
+    addresses: amqps://nipfedwc:7yk517yVakEKp2pMwhty412VF0DUiRge@chinook.rmq.cloudamqp.com/nipfedwc
 
 logging:
   level:
