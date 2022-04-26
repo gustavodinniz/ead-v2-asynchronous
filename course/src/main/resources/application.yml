@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-course-service
   datasource:
-    url: jdbc:postgresql://localhost:5442/ead-course-db
+    url: jdbc:postgresql://localhost:5446/ead-v2-course-db
     username: admin
     password: 123456
   jpa:

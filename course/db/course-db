@@ -1,0 +1,1 @@
+sudo docker run --name ead-v2-course-db -p 5446:5432 -e POSTGRES_DB=ead-v2-course-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=123456 postgres:13.1
