@@ -41,7 +41,7 @@ public class UserModel implements Serializable {
     @Column
     private String imageUrl;
 
-    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "users",fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<CourseModel> courses;
 
