@@ -3,6 +3,7 @@ package com.ead.authuser.clients;
 import com.ead.authuser.dtos.CourseDTO;
 import com.ead.authuser.dtos.ResponsePageDTO;
 import com.ead.authuser.services.UtilsService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class CourseClient {
     String REQUEST_URL_COURSE;
 
     //@Retry(name = "retryInstance", fallbackMethod = "retryfallback")
+    //@CircuitBreaker(name = "circuitbreakerInstance", fallbackMethod = "circuitbreakerfallback")
     public Page<CourseDTO> getAllCoursesByUser(UUID userId, Pageable pageable) {
         List<CourseDTO> searchResult = null;
         ResponseEntity<ResponsePageDTO<CourseDTO>> result = null;
@@ -52,6 +54,12 @@ public class CourseClient {
         }
         log.info("Ending request /courses userId {} ", userId);
         return result.getBody();
+    }
+
+    public Page<CourseDTO> circuitbreakerfallback(UUID userId, Pageable pageable, Throwable throwable) {
+        log.error("Inside circuit breaker fallback, cause - {}", throwable.toString());
+        List<CourseDTO> searchResult = new ArrayList<>();
+        return new PageImpl<>(searchResult);
     }
 
     public Page<CourseDTO> retryfallback(UUID userId, Pageable pageable, Throwable throwable) {
