@@ -26,11 +26,11 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-    output:
-      ansi:
-        enabled: Always
-    rabbitmq:
-      addresses: amqps://nipfedwc:7yk517yVakEKp2pMwhty412VF0DUiRge@chinook.rmq.cloudamqp.com/nipfedwc
+  output:
+    ansi:
+      enabled: Always
+  rabbitmq:
+    addresses: amqps://nipfedwc:7yk517yVakEKp2pMwhty412VF0DUiRge@chinook.rmq.cloudamqp.com/nipfedwc
 
 logging:
   level:
@@ -38,6 +38,16 @@ logging:
     root: INFO
     org.springframework.web: DEBUG
     org.hibernate: INFO
+
+ead:
+  broker:
+    exchange:
+      notificationCommandExchange: ead.notificationcommand
+    queue:
+      notificationCommandQueue:
+        name: ead.notificationcommand.ms.notification
+    key:
+      notificationCommandKey: ms.notification
 
 management:
   endpoints:
