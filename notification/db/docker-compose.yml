@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  course-db:
+    image: postgres:13.1
+    container_name: ead-course-db
+    restart: always
+    environment:
+      - POSTGRES_DB=ead-course-db
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - 5442:5432

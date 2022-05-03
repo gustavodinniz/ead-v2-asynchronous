@@ -1,0 +1,1 @@
+sudo docker run --name ead-v2-notification-db -p 5448:5432 -e POSTGRES_DB=ead-v2-notification-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=123456 postgres:13.1
