@@ -1,8 +1,9 @@
-package com.ead.notification.dtos;
+package com.ead.course.dtos;
 
 import lombok.Data;
 
 import java.util.UUID;
+
 
 public class NotificationCommandDTO {
 

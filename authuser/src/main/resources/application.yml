@@ -47,6 +47,10 @@ ead:
     exchange:
       userEvent: ead.userevent
 
+authuser:
+  refreshscope:
+    name: Gustavo Gomes Diniz
+
 eureka:
   client:
     service-url:
