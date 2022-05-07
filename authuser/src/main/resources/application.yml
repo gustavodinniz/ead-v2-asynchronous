@@ -75,3 +75,4 @@ resilience4j:
       retryInstance:
         maxAttempts: 3
         waitDuration: 5s
+
